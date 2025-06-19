@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConceptRise - Beyond Memorization, Towards True Understanding</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-in-out',
+                        'slide-up': 'slideUp 0.5s ease-out',
+                        'float': 'float 3s ease-in-out infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: gradient 3s ease infinite;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        @keyframes gradient {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .hero-pattern {
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Header -->
+    <header class="glass-effect sticky top-0 z-50 border-b border-white/10">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-xl flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 17l10 5 10-5"/>
+                            <path d="M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h1 class="text-2xl font-bold text-white">ConceptRise</h1>
+                </div>
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#problem" class="text-white/80 hover:text-white transition-colors font-medium">The Problem</a>
+                    <a href="#solution" class="text-white/80 hover:text-white transition-colors font-medium">Our Solution</a>
+                    <a href="#benefits" class="text-white/80 hover:text-white transition-colors font-medium">Benefits</a>
+                </nav>
+                <a href="#demo" class="hidden md:inline-block bg-white/20 backdrop-blur-sm text-white font-semibold py-3 px-6 rounded-xl hover:bg-white/30 transition-all duration-300 border border-white/20">
+                    Request Demo
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Hero Section -->
+        <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden hero-pattern">
+            <div class="container mx-auto px-6 text-center relative z-10">
+                <div class="animate-slide-up">
+                    <h2 class="text-5xl md:text-7xl font-black text-white leading-tight mb-8">
+                        Beyond Memorization,<br>
+                        Towards <span class="gradient-text">True Understanding</span>
+                    </h2>
+                    <p class="text-xl md:text-2xl max-w-4xl mx-auto text-white/90 mb-12 font-light leading-relaxed">
+                        ConceptRise is an AI-powered assessment platform that revolutionizes education by evaluating and enhancing conceptual understanding, preparing students for a future that demands critical thinking.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                        <a href="#demo" class="group bg-white text-gray-900 font-bold py-4 px-10 rounded-2xl hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-2xl">
+                            <span class="flex items-center">
+                                Get Started
+                                <svg class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                                </svg>
+                            </span>
+                        </a>
+                        <a href="#solution" class="text-white font-semibold py-4 px-10 rounded-2xl border-2 border-white/30 hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Floating Elements -->
+            <div class="absolute top-20 left-10 w-20 h-20 bg-white/10 rounded-full animate-float" style="animation-delay: -1s;"></div>
+            <div class="absolute bottom-20 right-10 w-16 h-16 bg-white/10 rounded-full animate-float" style="animation-delay: -2s;"></div>
+            <div class="absolute top-1/2 right-20 w-12 h-12 bg-white/10 rounded-full animate-float"></div>
+        </section>
+
+        <!-- Problem Section -->
+        <section id="problem" class="py-20 bg-gray-50 relative">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 max-w-4xl mx-auto">
+                    <span class="inline-block bg-red-100 text-red-600 px-4 py-2 rounded-full text-sm font-semibold mb-4">THE CHALLENGE</span>
+                    <h3 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">The Crisis in Modern Assessment</h3>
+                    <p class="text-xl text-gray-600 leading-relaxed">Traditional evaluation methods prioritize memorization over comprehension, creating a generation of students who can recall facts but struggle with critical thinking and real-world problem-solving.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                    <!-- Card 1 -->
+                    <div class="bg-white p-8 rounded-3xl shadow-xl card-hover border border-gray-100">
+                        <div class="w-16 h-16 bg-gradient-to-br from-red-400 to-pink-500 rounded-2xl flex items-center justify-center mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <path d="M9 12l2 2 4-4"/>
+                                <path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/>
+                            </svg>
+                        </div>
+                        <h4 class="text-2xl font-bold text-gray-900 mb-4">Rote Learning Dominance</h4>
+                        <p class="text-gray-600 leading-relaxed">Educational systems emphasize fact memorization over understanding core principles, leaving students unprepared for complex problem-solving scenarios.</p>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="bg-white p-8 rounded-3xl shadow-xl card-hover border border-gray-100">
+                        <div class="w-16 h-16 bg-gradient-to-br from-orange-400 to-red-500 rounded-2xl flex items-center justify-center mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <circle cx="12" cy="12" r="3"/>
+                                <path d="M12 1v6m0 6v6m11-7h-6m-6 0H1"/>
+                            </svg>
+                        </div>
+                        <h4 class="text-2xl font-bold text-gray-900 mb-4">Critical Thinking Deficit</h4>
+                        <p class="text-gray-600 leading-relaxed">When memorization becomes the primary goal, students lose the ability to analyze, synthesize, and apply knowledge to novel situations effectively.</p>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="bg-white p-8 rounded-3xl shadow-xl card-hover border border-gray-100">
+                        <div class="w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-2xl flex items-center justify-center mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                <circle cx="12" cy="12" r="3"/>
+                            </svg>
+                        </div>
+                        <h4 class="text-2xl font-bold text-gray-900 mb-4">Hidden Knowledge Gaps</h4>
+                        <p class="text-gray-600 leading-relaxed">Educators and parents lack visibility into whether students truly comprehend subjects or merely memorize answers, masking fundamental learning gaps.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Solution Section -->
+        <section id="solution" class="py-20 bg-white relative overflow-hidden">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <span class="inline-block bg-blue-100 text-blue-600 px-4 py-2 rounded-full text-sm font-semibold mb-4">OUR INNOVATION</span>
+                    <h3 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Revolutionary AI-Driven Assessment</h3>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">ConceptRise transforms education through intelligent, adaptive assessment that prioritizes deep understanding over surface-level memorization.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+                    <!-- Step 1 -->
+                    <div class="group relative">
+                        <div class="bg-gradient-to-br from-blue-50 to-indigo-100 p-8 rounded-3xl border border-blue-200 card-hover relative overflow-hidden">
+                            <div class="absolute top-4 right-4 w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-sm">1</div>
+                            <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-6">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                    <path d="M9 11H1v3h8v3l3-4-3-4v2z"/>
+                                    <path d="M22 12h-7"/>
+                                </svg>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-900 mb-3">Intelligent Inquiry</h4>
+                            <p class="text-gray-600 leading-relaxed">AI generates conceptual, open-ended questions that probe deep understanding rather than testing memorized facts.</p>
+                        </div>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="group relative">
+                        <div class="bg-gradient-to-br from-purple-50 to-pink-100 p-8 rounded-3xl border border-purple-200 card-hover relative overflow-hidden">
+                            <div class="absolute top-4 right-4 w-8 h-8 bg-purple-500 text-white rounded-full flex items-center justify-center font-bold text-sm">2</div>
+                            <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                    <polyline points="14,2 14,8 20,8"/>
+                                    <line x1="16" y1="13" x2="8" y2="13"/>
+                                    <line x1="16" y1="17" x2="8" y2="17"/>
+                                </svg>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-900 mb-3">Expressive Responses</h4>
+                            <p class="text-gray-600 leading-relaxed">Students articulate their thinking through detailed subjective answers, revealing their complete thought processes.</p>
+                        </div>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="group relative">
+                        <div class="bg-gradient-to-br from-green-50 to-emerald-100 p-8 rounded-3xl border border-green-200 card-hover relative overflow-hidden">
+                            <div class="absolute top-4 right-4 w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center font-bold text-sm">3</div>
+                            <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-6">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                    <circle cx="12" cy="12" r="3"/>
+                                    <path d="M20.4 15a9 9 0 1 1-8.8-8.8"/>
+                                    <path d="M16 8l-4 4"/>
+                                </svg>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-900 mb-3">Deep Analysis</h4>
+                            <p class="text-gray-600 leading-relaxed">Advanced AI evaluates responses for conceptual accuracy, depth of understanding, and reasoning quality.</p>
+                        </div>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="group relative">
+                        <div class="bg-gradient-to-br from-orange-50 to-amber-100 p-8 rounded-3xl border border-orange-200 card-hover relative overflow-hidden">
+                            <div class="absolute top-4 right-4 w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold text-sm">4</div>
+                            <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-amber-600 rounded-2xl flex items-center justify-center mb-6">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                    <path d="M2 17l10 5 10-5"/>
+                                    <path d="M2 12l10 5 10-5"/>
+                                </svg>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-900 mb-3">Smart Adaptation</h4>
+                            <p class="text-gray-600 leading-relaxed">Dynamic difficulty adjustment ensures optimal challenge levels, promoting continuous growth and engagement.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Personalized AI Mentor Section -->
+        <section id="pcm" class="py-20 bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 text-white relative overflow-hidden">
+            <div class="absolute inset-0 bg-black/20"></div>
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div class="space-y-8">
+                        <div>
+                            <span class="inline-block bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-semibold mb-4">AI INNOVATION</span>
+                            <h3 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">Meet Your Personal AI Concept Mentor</h3>
+                            <p class="text-xl text-white/90 leading-relaxed">Transform learning with an AI-powered virtual coach that provides personalized, one-on-one support to help every student master complex concepts through interactive dialogue and adaptive teaching.</p>
+                        </div>
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-8 h-8 bg-gradient-to-br from-green-400 to-emerald-500 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold text-white mb-2">Interactive Mastery</h4>
+                                    <p class="text-white/80">Continuous dialogue and questioning until complete concept mastery is achieved through understanding, not memorization.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="w-8 h-8 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold text-white mb-2">Adaptive Learning Styles</h4>
+                                    <p class="text-white/80">Multiple explanation approaches tailored to individual learning preferences and cognitive patterns for optimal understanding.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="w-8 h-8 bg-gradient-to-br from-purple-400 to-pink-500 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold text-white mb-2">Intelligent Pacing</h4>
+                                    <p class="text-white/80">Dynamic pace adjustment with motivational support to maintain engagement while building confidence through success.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
+                            <div class="bg-gray-800 rounded-2xl p-6 space-y-4">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-8 h-8 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-full"></div>
+                                    <span class="text-gray-300 font-medium">AI Mentor</span>
+                                </div>
+                                <div class="bg-indigo-600 text-white p-4 rounded-2xl rounded-tl-none">
+                                    <p class="text-sm">Let's explore photosynthesis! Can you explain what happens when sunlight hits a leaf?</p>
+                                </div>
+                                <div class="bg-gray-700 text-white p-4 rounded-2xl rounded-tr-none ml-8">
+                                    <p class="text-sm">The plant uses sunlight to make food?</p>
+                                </div>
+                                <div class="bg-indigo-600 text-white p-4 rounded-2xl rounded-tl-none">
+                                    <p class="text-sm">Great start! Now, what ingredients does the plant need besides sunlight? Think about what it absorbs from air and soil...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section id="benefits" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <span class="inline-block bg-emerald-100 text-emerald-600 px-4 py-2 rounded-full text-sm font-semibold mb-4">TRANSFORMATIVE IMPACT</span>
+                    <h3 class="text-4xl md:text-5xl font-bold text-gray-900">Revolutionizing Education for Everyone</h3>
+                </div>
+                <div class="grid lg:grid-cols-2 gap-16 max-w-7xl mx-auto">
+                    <!-- Benefits for Schools -->
+                    <div class="bg-white rounded-3xl p-10 shadow-xl border border-gray-100">
+                        <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-8">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                <polyline points="9,22 9,12 15,12 15,22"/>
+                            </svg>
+                        </div>
+                        <h4 class="text-3xl font-bold text-gray-900 mb-8">For Educational Institutions</h4>
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                    <span class="text-white font-bold text-sm">✓</span>
+                                </div>
+                                <div>
+                                    <h5 class="text-xl font-bold text-gray-900 mb-2">Enhanced Teaching Excellence</h5>
+                                    <p class="text-gray-600">Identify learning patterns and knowledge gaps across grades and classes to optimize curriculum delivery and teaching strategies.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                    <span class="text-white font-bold text-sm">✓</span>
+                                </div>
+                                <div>
+                                    <h5 class="text-xl font-bold text-gray-900 mb-2">Market Leadership</h5>
+                                    <p class="text-gray-600">Establish your institution as an educational innovator by implementing cutting-edge AI-powered learning technology.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                    <span class="text-white font-bold text-sm">✓</span>
+                                </div>
+                                <div>
+                                    <h5 class="text-xl font-bold text-gray-900 mb-2">Competitive Advantage</h5>
+                                    <p class="text-gray-600">Attract discerning families seeking the best educational technology and outcomes for their children's academic success.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Benefits for Parents -->
+                    <div class="bg-white rounded-3xl p-10 shadow-xl border border-gray-100">
+                        <div class="w-16 h-16 bg-gradient-to-br from-emerald-500 to-green-600 rounded-2xl flex items-center justify-center mb-8">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                <circle cx="12" cy="7" r="4"/>
+                            </svg>
+                        </div>
+                        <h4 class="text-3xl font-bold text-gray-900 mb-8">For Parents & Students</h4>
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-6 h-6 bg-emerald-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                    <span class="text-white font-bold text-sm">✓</span>
+                                </div>
+                                <div>
+                                    <h5 class="text-xl font-bold text-gray-900 mb-2">Clear Learning Insights</h5>
+                                    <p class="text-gray-600">Receive detailed analytics on your child's conceptual understanding and specific areas requiring focused attention and growth.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="w-6 h-6 bg-emerald-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                    <span class="text-white font-bold text-sm">✓</span>
+                                </div>
+                                <div>
+                                    <h5 class="text-xl font-bold text-gray-900 mb-2">Personalized AI Coaching</h5>
+                                    <p class="text-gray-600">Access to dedicated AI mentorship that provides individualized support, explanation, and guidance tailored to your child's learning style.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="w-6 h-6 bg-emerald-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                    <span class="text-white font-bold text-sm">✓</span>
+                                </div>
+                                <div>
+                                    <h5 class="text-xl font-bold text-gray-900 mb-2">Measurable Progress</h5>
+                                    <p class="text-gray-600">Track tangible improvements in both academic performance and, more importantly, fundamental conceptual understanding and critical thinking skills.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Demo Request Section -->
+        <section id="demo" class="py-20 gradient-bg relative overflow-hidden">
+            <div class="absolute inset-0 hero-pattern"></div>
+            <div class="container mx-auto px-6 text-center max-w-4xl relative z-10">
+                <div class="space-y-8">
+                    <span class="inline-block bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-semibold">GET STARTED TODAY</span>
+                    <h2 class="text-4xl md:text-5xl font-bold text-white leading-tight">Ready to Transform Learning?</h2>
+                    <p class="text-xl text-white/90 max-w-2xl mx-auto leading-relaxed">
+                        Experience the future of education with a personalized demo. See how ConceptRise can revolutionize learning outcomes and teaching effectiveness at your institution.
+                    </p>
+                </div>
+                <div class="mt-12 max-w-2xl mx-auto">
+                    <form class="space-y-6" action="https://formspree.io/f/xjkrebgp" method="POST" onsubmit="handleDemoRequest(event)">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <input type="text" name="fullName" required placeholder="Your Full Name" class="w-full bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-white/70 rounded-xl px-6 py-4 focus:ring-2 focus:ring-white/50 focus:outline-none transition-all">
+                            <input type="text" name="institution" required placeholder="Institution Name" class="w-full bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-white/70 rounded-xl px-6 py-4 focus:ring-2 focus:ring-white/50 focus:outline-none transition-all">
+                        </div>
+                        <input type="email" name="email" required placeholder="Professional Email Address" class="w-full bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-white/70 rounded-xl px-6 py-4 focus:ring-2 focus:ring-white/50 focus:outline-none transition-all">
+                        <textarea name="message" placeholder="Additional information or specific demo requirements (optional)" class="w-full bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-white/70 rounded-xl px-6 py-4 focus:ring-2 focus:ring-white/50 focus:outline-none transition-all h-24 resize-none"></textarea>
+                        <button type="submit" class="w-full bg-white text-gray-900 font-bold py-4 px-8 rounded-xl hover:bg-gray-100 transition-all transform hover:scale-105 shadow-2xl">
+                            Schedule Your Demo
+                        </button>
+                    </form>
+                    <div id="success-message" class="mt-8 p-6 bg-green-500/20 backdrop-blur-sm border border-green-300/30 rounded-xl text-green-100" style="display: none;">
+                        <h4 class="font-bold text-lg mb-2">Demo Request Received!</h4>
+                        <p>Thank you for your interest in ConceptRise. Our team will contact you within 24 hours to schedule your personalized demonstration.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-3 mb-4 md:mb-0">
+                    <div class="w-10 h-10 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-xl flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 17l10 5 10-5"/>
+                            <path d="M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <span class="text-xl font-bold">ConceptRise</span>
+                </div>
+                <p class="text-gray-400">&copy; 2025 ConceptRise. Transforming education through AI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- Demo Request Form Handling with Formspree ---
+        async function handleDemoRequest(event) {
+            event.preventDefault();
+            const form = event.target;
+            const successMessage = document.getElementById('success-message');
+            const submitButton = form.querySelector('button[type="submit"]');
+            
+            // Show loading state
+            const originalButtonText = submitButton.textContent;
+            submitButton.textContent = 'Sending...';
+            submitButton.disabled = true;
+            
+            try {
+                // Submit form data to Formspree
+                const formData = new FormData(form);
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    console.log('Demo request sent successfully');
+                    
+                    // Smooth transition to success message
+                    form.style.transform = 'scale(0.95)';
+                    form.style.opacity = '0';
+                    setTimeout(() => {
+                        form.style.display = 'none';
+                        successMessage.style.display = 'block';
+                        successMessage.style.transform = 'scale(1.05)';
+                        setTimeout(() => {
+                            successMessage.style.transform = 'scale(1)';
+                        }, 100);
+                    }, 200);
+                } else {
+                    throw new Error('Form submission failed');
+                }
+                
+            } catch (error) {
+                console.error('Error sending demo request:', error);
+                
+                // Show error message
+                alert('Sorry, there was an error sending your request. Please try again or contact us directly.');
+                
+                // Reset button
+                submitButton.textContent = originalButtonText;
+                submitButton.disabled = false;
+            }
+        }
+
+        // Add smooth scroll behavior for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
