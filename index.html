@@ -252,25 +252,62 @@
         // --- Demo Request Form Handling ---
         function handleDemoRequest(event) {
             event.preventDefault();
+            event.stopPropagation();
+            
             const form = event.target;
             const successMessage = document.getElementById('success-message');
-            
-            // In a real app, you would send this data to your backend/CRM.
             const formData = new FormData(form);
-            const data = Object.fromEntries(formData.entries());
-            console.log('Demo Request Submitted:', data);
             
-            // Smooth transition
-            form.style.transform = 'scale(0.95)';
-            form.style.opacity = '0';
-            setTimeout(() => {
-                form.style.display = 'none';
-                successMessage.style.display = 'block';
-                successMessage.style.transform = 'scale(1.05)';
-                setTimeout(() => {
-                    successMessage.style.transform = 'scale(1)';
-                }, 100);
-            }, 200);
+            console.log('Form submission initiated');
+            console.log('Form data:', Object.fromEntries(formData));
+            
+            // Submit to Formspree
+            fetch('https://formspree.io/f/xjkrebgp', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                },
+                mode: 'cors'
+            })
+            .then(response => {
+                console.log('Response received:', response.status, response.statusText);
+                const contentType = response.headers.get('content-type');
+                if (contentType && contentType.includes('application/json')) {
+                    return response.json().then(data => {
+                        console.log('Response data:', data);
+                        return { ok: response.ok, data };
+                    });
+                } else {
+                    return response.text().then(text => {
+                        console.log('Response text:', text);
+                        return { ok: response.ok, data: text };
+                    });
+                }
+            })
+            .then(result => {
+                if (result.ok) {
+                    // Smooth transition
+                    form.style.transform = 'scale(0.95)';
+                    form.style.opacity = '0';
+                    setTimeout(() => {
+                        form.style.display = 'none';
+                        successMessage.style.display = 'block';
+                        successMessage.style.transform = 'scale(1.05)';
+                        setTimeout(() => {
+                            successMessage.style.transform = 'scale(1)';
+                        }, 100);
+                    }, 200);
+                } else {
+                    throw new Error('Form submission failed: ' + JSON.stringify(result.data));
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('There was an error submitting your request. Please try again.');
+            });
+            
+            return false;
         }
 
         // Add smooth scroll behavior for navigation links
