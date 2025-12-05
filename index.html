@@ -30,7 +30,7 @@
             color: #1e40af; /* Professional blue */
         }
         .gradient-bg {
-            background: #f9fafb;
+            background: linear-gradient(to bottom, #fff8f5, #fff5f0);
         }
         .glass-effect {
             background: rgba(255, 255, 255, 0.95);
@@ -65,7 +65,7 @@
             background-image: none;
         }
         .hero-bg {
-            background: #ffffff;
+            background: linear-gradient(to bottom, #fff8f5, #fff5f0);
         }
     </style>
 </head>
@@ -94,27 +94,25 @@
     <main>
 
         <!-- Hero Section -->
-        <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden hero-pattern hero-bg">
-            <div class="container mx-auto pl-2 pr-6 text-center relative z-10">
-                <div class="animate-slide-up">
-                    <div class="text-3xl md:text-5xl font-black text-gray-900 leading-tight mb-8">
-                        Go Beyond Memorization<br>
-                        Achieve <span class="gradient-text">True Conceptual Understanding</span>
+        <section id="hero" class="relative py-12 md:py-16 overflow-hidden hero-pattern hero-bg">
+            <div class="container mx-auto pl-2 pr-6 relative z-10">
+                <div class="flex flex-col md:flex-row gap-8 items-center">
+                    <div class="flex-1 animate-slide-up text-center">
+                        <div class="text-2xl font-black text-gray-900 leading-tight mb-4">
+                            <div class="mb-4">From Marks →  Mastery</div>
+                            <div>From Pressure →  Clarity</div>
+                        </div>
+                        
                     </div>
-                    <p class="text-xl md:text-2xl max-w-4xl mx-auto text-gray-600 mb-8 font-light leading-relaxed">
-                        ConceptRise is an AI-powered assessment platform that revolutionizes education by evaluating and enhancing conceptual understanding, preparing students for a future that demands critical thinking
-                    </p>
-                    <div class="mt-8 flex justify-center">
-                        <a href="https://timesofindia.indiatimes.com/india/cbse-exam-are-teachers-ready-for-big-shift-from-rote-learning/articleshow/124490148.cms" target="_blank" rel="noopener noreferrer" class="inline-block">
-                            <img src="times-news-clip.jpg" alt="CBSE exam news article - Are teachers ready for big shift from rote learning?" class="max-w-md w-full h-auto object-contain rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200">
-                        </a>
+                    <div class="flex-1 animate-slide-up text-center md:text-left">
+                        <img src="main-page-sidepic.jpeg" alt="Bridge Learning - Future-proof your school" class="w-full h-auto rounded-lg">
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Problem Section -->
-        <section id="problem" class="py-12 bg-gray-50 relative">
+        <section id="problem" class="py-12 bg-white relative">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16 max-w-4xl mx-auto">
                     <span class="inline-block bg-gray-100 text-gray-700 px-4 py-2 rounded-full text-sm font-medium mb-4">The Problem</span>
@@ -160,7 +158,7 @@
         </section>
 
         <!-- Solution Section -->
-        <section id="solution" class="py-12 bg-white relative overflow-hidden">
+        <section id="solution" class="py-12 gradient-bg relative overflow-hidden">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
                     <span class="inline-block bg-gray-100 text-gray-700 px-4 py-2 rounded-full text-sm font-medium mb-4">OUR SOLUTION</span>
@@ -172,7 +170,7 @@
         </section>
 
         <!-- About Us Section -->
-        <section id="about" class="py-12 bg-gray-50">
+        <section id="about" class="py-12 bg-white">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16 max-w-4xl mx-auto">
                     <span class="inline-block bg-gray-100 text-gray-700 px-4 py-2 rounded-full text-sm font-medium mb-4">ABOUT US</span>
